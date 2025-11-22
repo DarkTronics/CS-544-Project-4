@@ -1,0 +1,2 @@
+<div id="result"><dl class="book-details"><dt>ISBN</dt><dd>387-267-458-7</dd><dt>Title</dt><dd>JavaScript Programmers Reference</dd><dt>Authors</dt><dd>Dangers, Jaylen; Tannehill, Everett</dd><dt>Number of Pages</dt><dd>362</dd><dt>Publisher</dt><dd>New Starch</dd><dt>Number of Copies</dt><dd>4</dd><dt>Borrowers</dt><dd id="borrowers">None</dd></dl><form class="grid-form"><label for="patronId">Patron ID</label><span><input id="patronId"><br><span class="error" id="patronId-error"></span></span><span></span><button type="submit">Checkout Book</button></form></div>
+

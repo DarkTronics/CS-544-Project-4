@@ -1,0 +1,34 @@
+  <div id="result">
+    <ul id="search-results">
+      <li>
+        <span class="content">
+	  Advanced JavaScript Programming
+	</span>
+	<a class="details">details...</a>
+      </li>
+      <li>
+        <span class="content">
+	  Basics of JavaScript Programming
+	</span>
+	<a class="details">details...</a>
+      </li>
+      <li>
+        <span class="content">
+	  Fundamentals of JavaScript Programming
+	</span>
+	<a class="details">details...</a>
+      </li>
+      <li>
+        <span class="content">
+	  Intermediate JavaScript Programming
+	</span>
+	<a class="details">details...</a>
+      </li>
+      <li>
+        <span class="content">
+	  JavaScript Prats and Pitfalls
+	</span>
+        <a class="details">details...</a>
+      </li>
+    </ul>
+  </div>
