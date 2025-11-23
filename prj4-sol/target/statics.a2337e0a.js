@@ -863,14 +863,97 @@ class App {
             dl.append((0, _utilsJs.makeElement)('dt', {}, 'Number of Copies'));
             dl.append((0, _utilsJs.makeElement)('dd', {}, String(book.nCopies)));
             // Borrowers (with id for later use)
-            dl.append((0, _utilsJs.makeElement)('dt', {
+            dl.append((0, _utilsJs.makeElement)('dt', {}, 'Borrowers'));
+            dl.append((0, _utilsJs.makeElement)('dd', {
                 id: 'borrowers'
-            }, 'Borrowers'));
-            dl.append((0, _utilsJs.makeElement)('dd', {}, 'None'));
+            }, 'None'));
             // Display in result area
             this.result.innerHTML = '';
             this.result.append(dl);
+            // Add checkout form under the details
+            this.addCheckoutForm(book.isbn);
+            // Populate borrowers list (may be None)
+            this.updateBorrowers(book.isbn);
         }
+    }
+    /** Add a checkout form below the book details. */ addCheckoutForm(isbn) {
+        const form = (0, _utilsJs.makeElement)('form', {
+            class: 'grid-form'
+        });
+        const label = (0, _utilsJs.makeElement)('label', {
+            for: 'patronId'
+        }, 'Patron ID');
+        const input = (0, _utilsJs.makeElement)('input', {
+            id: 'patronId',
+            name: 'patronId'
+        });
+        const br = (0, _utilsJs.makeElement)('br');
+        const errSpan = (0, _utilsJs.makeElement)('span', {
+            class: 'error',
+            id: 'patronId-error'
+        });
+        const inputWrap = (0, _utilsJs.makeElement)('span');
+        inputWrap.append(input, br, errSpan);
+        const submit = (0, _utilsJs.makeElement)('button', {
+            type: 'submit'
+        }, 'Checkout Book');
+        form.append(label, inputWrap, submit);
+        form.addEventListener('submit', async (ev)=>{
+            ev.preventDefault();
+            this.clearErrors();
+            const data = (0, _utilsJs.getFormData)(form);
+            const patronId = data.patronId;
+            if (!patronId) {
+                const w = document.querySelector(`#patronId-error`);
+                if (w) w.append('Patron ID required');
+                return;
+            }
+            // call checkout web service
+            const res = await this.ws.checkoutBook({
+                isbn,
+                patronId
+            });
+            if (res.isOk === false) displayErrors(res.errors);
+            else // refresh borrowers list
+            await this.updateBorrowers(isbn);
+        });
+        this.result.append(form);
+    }
+    /** Update the #borrowers element by calling getLends and rendering results */ async updateBorrowers(isbn) {
+        this.clearErrors();
+        const res = await this.ws.getLends(isbn);
+        if (res.isOk === false) {
+            displayErrors(res.errors);
+            return;
+        }
+        const lends = res.val;
+        const dd = this.result.querySelector('#borrowers');
+        if (!dd) return;
+        if (!lends || lends.length === 0) {
+            dd.innerHTML = 'None';
+            return;
+        }
+        const ul = (0, _utilsJs.makeElement)('ul');
+        for (const lend of lends){
+            const li = (0, _utilsJs.makeElement)('li');
+            const span = (0, _utilsJs.makeElement)('span', {
+                class: 'content'
+            }, lend.patronId);
+            const btn = (0, _utilsJs.makeElement)('button', {
+                class: 'return-book'
+            }, 'Return Book');
+            btn.addEventListener('click', async (ev)=>{
+                ev.preventDefault();
+                this.clearErrors();
+                const r = await this.ws.returnBook(lend);
+                if (r.isOk === false) displayErrors(r.errors);
+                else await this.updateBorrowers(isbn);
+            });
+            li.append(span, btn);
+            ul.append(li);
+        }
+        dd.innerHTML = '';
+        dd.append(ul);
     }
     /** unwrap a result, displaying errors if !result.isOk,
      *  returning T otherwise.   Use as if (unwrap(result)) { ... }
@@ -933,16 +1016,58 @@ class LibraryWs {
     }
     /** check out book specified by lend */ //make a PUT request to /lendings
     async checkoutBook(lend) {
-        return (0, _cs544JsUtils.Errors).errResult('TODO');
+        const url = `${this.url}/api/lendings`;
+        try {
+            const response = await fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(lend)
+            });
+            const envelope = await response.json();
+            if (envelope.isOk === true) return (0, _cs544JsUtils.Errors).VOID_RESULT;
+            else return new (0, _cs544JsUtils.Errors).ErrResult(envelope.errors);
+        } catch (err) {
+            console.error(err);
+            return (0, _cs544JsUtils.Errors).errResult(`PUT ${url}: error ${err}`);
+        }
     }
     /** return book specified by lend */ //make a DELETE request to /lendings
     async returnBook(lend) {
-        return (0, _cs544JsUtils.Errors).errResult('TODO');
+        const url = `${this.url}/api/lendings`;
+        try {
+            const response = await fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(lend)
+            });
+            const envelope = await response.json();
+            if (envelope.isOk === true) return (0, _cs544JsUtils.Errors).VOID_RESULT;
+            else return new (0, _cs544JsUtils.Errors).ErrResult(envelope.errors);
+        } catch (err) {
+            console.error(err);
+            return (0, _cs544JsUtils.Errors).errResult(`DELETE ${url}: error ${err}`);
+        }
     }
     /** return Lend[] of all lendings for isbn. */ //make a GET request to /lendings with query-params set
     //to { findBy: 'isbn', isbn }.
     async getLends(isbn) {
-        return (0, _cs544JsUtils.Errors).errResult('TODO');
+        const url = new URL(`${this.url}/api/lendings`);
+        url.searchParams.set('findBy', 'isbn');
+        url.searchParams.set('isbn', isbn);
+        try {
+            const result = await fetchJson(url.toString());
+            if (result.isOk === false) return result;
+            const envelope = result.val;
+            if (envelope.isOk === true) return (0, _cs544JsUtils.Errors).okResult(envelope.result);
+            else return new (0, _cs544JsUtils.Errors).ErrResult(envelope.errors);
+        } catch (err) {
+            console.error(err);
+            return (0, _cs544JsUtils.Errors).errResult(`GET ${url.toString()}: error ${err}`);
+        }
     }
 }
 /** Return either a SuccessEnvelope<T> or PagedEnvelope<T> wrapped

@@ -1,0 +1,11 @@
+Loaded config from config.mjs
+Config keys: port
+Loaded books file '/home/rdaniel1/cs544/data/books.json' — 100 books
+Sample titles (up to 5):
+- PL/SQL Reference Manual
+- Fundamentals of Scala Programming
+- Ruby: The Definitive Guide
+- Intermediate Python Programming
+- PL/SQL: The Good Parts
+Library server listening on http://localhost:2345
+Available endpoints: GET /api/books, GET /api/books/:id

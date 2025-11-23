@@ -9,7 +9,7 @@ import { NavLinks, LinkedResult, PagedEnvelope, SuccessEnvelope }
 
 import { makeLibraryWs, LibraryWs } from './library-ws.js';
 
-import { makeElement, makeQueryUrl } from './utils.js';
+import { makeElement, makeQueryUrl, getFormData } from './utils.js';
 
 export default function makeApp(wsUrl: string) {
   return new App(wsUrl);
@@ -40,40 +40,40 @@ class App {
       });
     }
   }
-  
+
   //TODO: add private methods as needed
   /** Auxiliary method to display search results */
   private async displaySearchResults(url: string | URL): Promise<void> {
     this.clearErrors();
-    
+
     // Convert URL object to string if necessary
     const urlString = typeof url === 'string' ? url : url.toString();
-    
+
     // Call the web service
     const result = await this.ws.findBooksByUrl(urlString);
-    
+
     // Log the result to console to verify structure
     console.log('Search result:', result);
-    
+
     // Unwrap the result to check for errors
     const data = this.unwrap(result);
-    
+
     if (data) {
       console.log('Unwrapped data:', data);
-      
+
       // Clear previous results
       this.result.innerHTML = '';
-      
+
       // Add scroll controls before results
       const scrollBefore = this.makeScrollControls(data.links);
       if (scrollBefore) {
         this.result.append(scrollBefore);
       }
-      
+
       // Display the books as an unordered list
       const books = data.result;
       const ul = makeElement('ul');
-      
+
       for (const book of books) {
         const li = makeElement('li');
         const title = makeElement('span', {}, book.result.title);
@@ -89,9 +89,9 @@ class App {
         li.append(title, ' ', details);
         ul.append(li);
       }
-      
+
       this.result.append(ul);
-      
+
       // Add scroll controls after results
       const scrollAfter = this.makeScrollControls(data.links);
       if (scrollAfter) {
@@ -104,13 +104,13 @@ class App {
   private makeScrollControls(links: NavLinks): HTMLElement | null {
     const hasPrev = links.prev !== undefined;
     const hasNext = links.next !== undefined;
-    
+
     if (!hasPrev && !hasNext) {
       return null;
     }
-    
+
     const scrollDiv = makeElement('div', { class: 'scroll' });
-    
+
     if (hasPrev) {
       const prevLink = makeElement('a', { href: links.prev.href, rel: 'prev' }, '<<');
       prevLink.addEventListener('click', (ev) => {
@@ -119,11 +119,11 @@ class App {
       });
       scrollDiv.append(prevLink);
     }
-    
+
     if (hasPrev && hasNext) {
       scrollDiv.append(' ');
     }
-    
+
     if (hasNext) {
       const nextLink = makeElement('a', { href: links.next.href, rel: 'next' }, '>>');
       nextLink.addEventListener('click', (ev) => {
@@ -132,62 +132,147 @@ class App {
       });
       scrollDiv.append(nextLink);
     }
-    
+
     return scrollDiv;
   }
 
-/** Auxiliary method to display book details */
+  /** Auxiliary method to display book details */
   private async displayBookDetails(url: string): Promise<void> {
     this.clearErrors();
     console.log('Details URL:', url);
-    
+
     // Call the web service
     const result = await this.ws.getBookByUrl(this.wsUrl + url);
-    
+
     // Log the result to console
     console.log('Book details result:', result);
-    
+
     // Unwrap the result
     const data = this.unwrap(result);
-    
+
     if (data) {
       const book = data.result;
-      
+
       // Create definition list for book details
       const dl = makeElement('dl');
-      
+
       // ISBN
       dl.append(makeElement('dt', {}, 'ISBN'));
       dl.append(makeElement('dd', {}, book.isbn));
-      
+
       // Title
       dl.append(makeElement('dt', {}, 'Title'));
       dl.append(makeElement('dd', {}, book.title));
-      
+
       // Authors
       dl.append(makeElement('dt', {}, 'Authors'));
       dl.append(makeElement('dd', {}, book.authors.join('; ')));
-      
+
       // Number of Pages
       dl.append(makeElement('dt', {}, 'Number of Pages'));
       dl.append(makeElement('dd', {}, String(book.pages)));
-      
+
       // Publisher
       dl.append(makeElement('dt', {}, 'Publisher'));
       dl.append(makeElement('dd', {}, book.publisher));
-      
+
       // Number of Copies
       dl.append(makeElement('dt', {}, 'Number of Copies'));
       dl.append(makeElement('dd', {}, String(book.nCopies)));
-      
+
       // Borrowers (with id for later use)
-      dl.append(makeElement('dt', { id: 'borrowers' }, 'Borrowers'));
-      dl.append(makeElement('dd', {}, 'None'));
-      
+      dl.append(makeElement('dt', {}, 'Borrowers'));
+      dl.append(makeElement('dd', { id: 'borrowers' }, 'None'));
+
       // Display in result area
       this.result.innerHTML = '';
       this.result.append(dl);
+
+      // Add checkout form under the details
+      this.addCheckoutForm(book.isbn);
+
+      // Populate borrowers list (may be None)
+      this.updateBorrowers(book.isbn);
     }
+  }
+
+  /** Add a checkout form below the book details. */
+  private addCheckoutForm(isbn: string) {
+    const form = makeElement('form', { class: 'grid-form' }) as HTMLFormElement;
+
+    const label = makeElement('label', { for: 'patronId' }, 'Patron ID');
+    const input = makeElement('input', { id: 'patronId', name: 'patronId' });
+    const br = makeElement('br');
+    const errSpan = makeElement('span', { class: 'error', id: 'patronId-error' });
+    const inputWrap = makeElement('span');
+    inputWrap.append(input, br, errSpan);
+
+    const submit = makeElement('button', { type: 'submit' }, 'Checkout Book');
+
+    form.append(label, inputWrap, submit);
+
+    form.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      this.clearErrors();
+      const data = getFormData(form);
+      const patronId = data.patronId;
+      if (!patronId) {
+        const w = document.querySelector(`#patronId-error`);
+        if (w) w.append('Patron ID required');
+        return;
+      }
+
+      // call checkout web service
+      const res = await this.ws.checkoutBook({ isbn, patronId });
+      if (res.isOk === false) {
+        displayErrors(res.errors);
+      }
+      else {
+        // refresh borrowers list
+        await this.updateBorrowers(isbn);
+      }
+    });
+
+    this.result.append(form);
+  }
+
+  /** Update the #borrowers element by calling getLends and rendering results */
+  private async updateBorrowers(isbn: string) {
+    this.clearErrors();
+    const res = await this.ws.getLends(isbn);
+    if (res.isOk === false) {
+      displayErrors(res.errors);
+      return;
+    }
+    const lends = res.val as Lib.Lend[];
+    const dd = this.result.querySelector('#borrowers');
+    if (!dd) return;
+    if (!lends || lends.length === 0) {
+      dd.innerHTML = 'None';
+      return;
+    }
+
+    const ul = makeElement('ul');
+    for (const lend of lends) {
+      const li = makeElement('li');
+      const span = makeElement('span', { class: 'content' }, lend.patronId);
+      const btn = makeElement('button', { class: 'return-book' }, 'Return Book');
+      btn.addEventListener('click', async (ev) => {
+        ev.preventDefault();
+        this.clearErrors();
+        const r = await this.ws.returnBook(lend);
+        if (r.isOk === false) {
+          displayErrors(r.errors);
+        }
+        else {
+          await this.updateBorrowers(isbn);
+        }
+      });
+      li.append(span, btn);
+      ul.append(li);
+    }
+    dd.innerHTML = '';
+    dd.append(ul);
   }
 
   /** unwrap a result, displaying errors if !result.isOk, 
@@ -206,7 +291,7 @@ class App {
   /** clear out all errors */
   private clearErrors() {
     this.errors.innerHTML = '';
-    document.querySelectorAll(`.error`).forEach( el => {
+    document.querySelectorAll(`.error`).forEach(el => {
       el.innerHTML = '';
     });
   }
@@ -218,7 +303,7 @@ class App {
  *  then the error message is added to that element; otherwise the
  *  error message is added to the element having to the element having
  *  ID `errors` wrapped within an `<li>`.
- */  
+ */
 function displayErrors(errors: Errors.Err[]) {
   for (const err of errors) {
     const id = err.options.widget ?? err.options.path;
@@ -227,7 +312,7 @@ function displayErrors(errors: Errors.Err[]) {
       widget.append(err.message);
     }
     else {
-      const li = makeElement('li', {class: 'error'}, err.message);
+      const li = makeElement('li', { class: 'error' }, err.message);
       document.querySelector(`#errors`)!.append(li);
     }
   }

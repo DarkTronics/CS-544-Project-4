@@ -1,5 +1,5 @@
 import { makeLibraryWs } from './library-ws.js';
-import { makeElement, makeQueryUrl } from './utils.js';
+import { makeElement, makeQueryUrl, getFormData } from './utils.js';
 export default function makeApp(wsUrl) {
     return new App(wsUrl);
 }
@@ -132,12 +132,88 @@ class App {
             dl.append(makeElement('dt', {}, 'Number of Copies'));
             dl.append(makeElement('dd', {}, String(book.nCopies)));
             // Borrowers (with id for later use)
-            dl.append(makeElement('dt', { id: 'borrowers' }, 'Borrowers'));
-            dl.append(makeElement('dd', {}, 'None'));
+            dl.append(makeElement('dt', {}, 'Borrowers'));
+            dl.append(makeElement('dd', { id: 'borrowers' }, 'None'));
             // Display in result area
             this.result.innerHTML = '';
             this.result.append(dl);
+            // Add checkout form under the details
+            this.addCheckoutForm(book.isbn);
+            // Populate borrowers list (may be None)
+            this.updateBorrowers(book.isbn);
         }
+    }
+    /** Add a checkout form below the book details. */
+    addCheckoutForm(isbn) {
+        const form = makeElement('form', { class: 'grid-form' });
+        const label = makeElement('label', { for: 'patronId' }, 'Patron ID');
+        const input = makeElement('input', { id: 'patronId', name: 'patronId' });
+        const br = makeElement('br');
+        const errSpan = makeElement('span', { class: 'error', id: 'patronId-error' });
+        const inputWrap = makeElement('span');
+        inputWrap.append(input, br, errSpan);
+        const submit = makeElement('button', { type: 'submit' }, 'Checkout Book');
+        form.append(label, inputWrap, submit);
+        form.addEventListener('submit', async (ev) => {
+            ev.preventDefault();
+            this.clearErrors();
+            const data = getFormData(form);
+            const patronId = data.patronId;
+            if (!patronId) {
+                const w = document.querySelector(`#patronId-error`);
+                if (w)
+                    w.append('Patron ID required');
+                return;
+            }
+            // call checkout web service
+            const res = await this.ws.checkoutBook({ isbn, patronId });
+            if (res.isOk === false) {
+                displayErrors(res.errors);
+            }
+            else {
+                // refresh borrowers list
+                await this.updateBorrowers(isbn);
+            }
+        });
+        this.result.append(form);
+    }
+    /** Update the #borrowers element by calling getLends and rendering results */
+    async updateBorrowers(isbn) {
+        this.clearErrors();
+        const res = await this.ws.getLends(isbn);
+        if (res.isOk === false) {
+            displayErrors(res.errors);
+            return;
+        }
+        const lends = res.val;
+        const dd = this.result.querySelector('#borrowers');
+        if (!dd)
+            return;
+        if (!lends || lends.length === 0) {
+            dd.innerHTML = 'None';
+            return;
+        }
+        const ul = makeElement('ul');
+        for (const lend of lends) {
+            const li = makeElement('li');
+            const span = makeElement('span', { class: 'content' }, lend.patronId);
+            const btn = makeElement('button', { class: 'return-book' }, 'Return Book');
+            btn.addEventListener('click', async (ev) => {
+                ev.preventDefault();
+                this.clearErrors();
+                const r = await this.ws.returnBook(lend);
+                if (r.isOk === false) {
+                    displayErrors(r.errors);
+                }
+                else {
+                    await this.updateBorrowers(isbn);
+                }
+            });
+            li.append(span, btn);
+            ul.append(li);
+        }
+        dd.innerHTML = '';
+        dd.append(ul);
     }
     /** unwrap a result, displaying errors if !result.isOk,
      *  returning T otherwise.   Use as if (unwrap(result)) { ... }

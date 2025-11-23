@@ -22,18 +22,73 @@ export class LibraryWs {
     /** check out book specified by lend */
     //make a PUT request to /lendings
     async checkoutBook(lend) {
-        return Errors.errResult('TODO');
+        const url = `${this.url}/api/lendings`;
+        try {
+            const response = await fetch(url, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(lend),
+            });
+            const envelope = await response.json();
+            if (envelope.isOk === true) {
+                return Errors.VOID_RESULT;
+            }
+            else {
+                return new Errors.ErrResult(envelope.errors);
+            }
+        }
+        catch (err) {
+            console.error(err);
+            return Errors.errResult(`PUT ${url}: error ${err}`);
+        }
     }
     /** return book specified by lend */
     //make a DELETE request to /lendings
     async returnBook(lend) {
-        return Errors.errResult('TODO');
+        const url = `${this.url}/api/lendings`;
+        try {
+            const response = await fetch(url, {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(lend),
+            });
+            const envelope = await response.json();
+            if (envelope.isOk === true) {
+                return Errors.VOID_RESULT;
+            }
+            else {
+                return new Errors.ErrResult(envelope.errors);
+            }
+        }
+        catch (err) {
+            console.error(err);
+            return Errors.errResult(`DELETE ${url}: error ${err}`);
+        }
     }
     /** return Lend[] of all lendings for isbn. */
     //make a GET request to /lendings with query-params set
     //to { findBy: 'isbn', isbn }.
     async getLends(isbn) {
-        return Errors.errResult('TODO');
+        const url = new URL(`${this.url}/api/lendings`);
+        url.searchParams.set('findBy', 'isbn');
+        url.searchParams.set('isbn', isbn);
+        try {
+            const result = await fetchJson(url.toString());
+            if (result.isOk === false) {
+                return result;
+            }
+            const envelope = result.val;
+            if (envelope.isOk === true) {
+                return Errors.okResult(envelope.result);
+            }
+            else {
+                return new Errors.ErrResult(envelope.errors);
+            }
+        }
+        catch (err) {
+            console.error(err);
+            return Errors.errResult(`GET ${url.toString()}: error ${err}`);
+        }
     }
 }
 /** Return either a SuccessEnvelope<T> or PagedEnvelope<T> wrapped
