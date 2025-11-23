@@ -29,6 +29,14 @@ class App {
     this.result = document.querySelector('#result');
     this.errors = document.querySelector('#errors');
     //TODO: add search handler
+    const search = document.querySelector<HTMLInputElement>('#search');
+    if (search) {
+      search.addEventListener('blur', (ev) => {
+        const value = (ev.target as HTMLInputElement).value;
+        const url = makeQueryUrl(`${this.wsUrl}/api/books`, { search: value });
+        console.log('#search blurred', value, url);
+      });
+    }
   }
   
   //TODO: add private methods as needed
