@@ -5,6 +5,12 @@ declare class App {
     private readonly result;
     private readonly errors;
     constructor(wsUrl: string);
+    /** Auxiliary method to display search results */
+    private displaySearchResults;
+    /** Create scroll controls (prev/next) based on available links */
+    private makeScrollControls;
+    /** Auxiliary method to display book details */
+    private displayBookDetails;
     /** unwrap a result, displaying errors if !result.isOk,
      *  returning T otherwise.   Use as if (unwrap(result)) { ... }
      *  when T !== void.
