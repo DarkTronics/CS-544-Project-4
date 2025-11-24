@@ -1,5 +1,5 @@
 import makeApp from './app.js';
-const DEFAULT_WS_URL = 'https://localhost:2345';
+const DEFAULT_WS_URL = "http://localhost:2345";
 window.addEventListener('DOMContentLoaded', async () => {
     makeApp(getWsUrl());
 });

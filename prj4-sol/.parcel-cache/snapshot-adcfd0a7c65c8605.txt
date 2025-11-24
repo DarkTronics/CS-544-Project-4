@@ -1,11 +1,11 @@
-4721
-63/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/index.d.ts.map1763935362554180783 0
-66/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/library-ws.js.map1763935362526180826 0
-55/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/app.js1763935362550180789 0
-61/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/app.d.ts.map1763935362554180783 0
-59/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/index.d.ts1763935362554180783 0
-61/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/index.js.map1763935362554180783 0
-57/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/app.d.ts1763935362554180783 0
+4739
+63/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/index.d.ts.map1763953889771997057 0
+66/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/library-ws.js.map1763953889731997112 0
+55/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/app.js1763953889767997062 0
+61/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/app.d.ts.map1763953889771997057 0
+59/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/index.d.ts1763953889771997057 0
+61/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/index.js.map1763953889771997057 0
+57/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/app.d.ts1763953889771997057 0
 44/home/rdaniel1/assign4/assign4/prj4-sol/dist1763934954202831407 1
 63/home/rdaniel1/assign4/assign4/prj4-sol/src/statics/index.html~1763929545322558206 0
 62/home/rdaniel1/assign4/assign4/prj4-sol/src/statics/setup.html1763934954238831346 0
@@ -52,7 +52,7 @@
 80/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/library-types/package.json~1763929545222558336 0
 123/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/node-gyp-build-optional-packages/node_modules/detect-libc/package.json1763929545246558305 0
 120/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/node-gyp-build-optional-packages/node_modules/detect-libc/README.md1763929545246558305 0
-68/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/library-ws.d.ts.map1763935362530180820 0
+68/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/library-ws.d.ts.map1763953889735997107 0
 125/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/node-gyp-build-optional-packages/node_modules/detect-libc/lib/process.js1763929545246558305 0
 128/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/node-gyp-build-optional-packages/node_modules/detect-libc/lib/filesystem.js1763929545246558305 0
 114/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/node-gyp-build-optional-packages/node_modules/detect-libc/lib1763929545246558305 1
@@ -329,7 +329,7 @@
 79/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/zh-CN.d.cts1763929545310558222 0
 75/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/mk.d.ts1763929545306558227 0
 73/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/de.js1763929545306558227 0
-63/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/utils.d.ts.map1763935362510180851 0
+63/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/utils.d.ts.map1763953889715997135 0
 74/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/ar.cjs1763929545306558227 0
 76/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/ar.d.cts1763929545306558227 0
 75/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/az.d.ts1763929545306558227 0
@@ -402,7 +402,7 @@
 73/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/sl.js1763929545310558222 0
 77/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/zh-TW.cjs1763929545310558222 0
 76/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/th.d.cts1763929545310558222 0
-59/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/utils.d.ts1763935362510180851 0
+59/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/utils.d.ts1763953889719997130 0
 74/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/he.cjs1763929545306558227 0
 74/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/be.cjs1763929545306558227 0
 76/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/index.js1763929545306558227 0
@@ -492,7 +492,7 @@
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/utils/src/bundle-url.js1763929545030558587 0
 93/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/utils/src/dependency-location.js1763929545030558587 0
 86/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/utils/src/PromiseQueue.js1763929545030558587 0
-62/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/library-ws.js1763935362526180826 0
+62/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/library-ws.js1763953889731997112 0
 81/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/utils/src/urlJoin.js1763929545030558587 0
 97/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/utils/src/replaceBundleReferences.js1763929545030558587 0
 68/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/src/v4/mini1763929545298558237 1
@@ -518,7 +518,6 @@
 80/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/utils/src/is-url.js1763929545030558587 0
 82/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/utils/src/Deferred.js1763929545030558587 0
 85/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/utils/src/relativeUrl.js1763929545030558587 0
-79/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/utils/src/index.js1763929545030558587 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/utils/src/getRootDir.js1763929545030558587 0
 74/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v3/external.d.cts1763929545298558237 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/utils/src/DefaultMap.js1763929545030558587 0
@@ -718,7 +717,7 @@
 87/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/lib/public/Symbols.js1763929544934558713 0
 86/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/lib/public/Target.js1763929544934558713 0
 76/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/lib/public1763929544934558713 1
-56/home/rdaniel1/assign4/assign4/prj4-sol/src/lib/index.ts1763934954238831346 0
+56/home/rdaniel1/assign4/assign4/prj4-sol/src/lib/index.ts1763951375755564335 0
 89/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/lib/UncommittedAsset.js1763929544934558713 0
 83/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/lib/assetUtils.js1763929544934558713 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/test/test-utils.js1763929544942558702 0
@@ -877,6 +876,8 @@
 88/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/runtime-browser-hmr/LICENSE1763929544958558681 0
 107/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/runtime-browser-hmr/lib/loaders/hmr-runtime.js1763929544958558681 0
 92/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/runtime-browser-hmr/lib/loaders1763929544958558681 1
+96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/watcher-linux-x64-musl/watcher.node1763950176869315580 0
+96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/watcher-linux-x64-musl/package.json1763950176861315593 0
 100/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-html/src/HTMLTransformer.js1763929545022558598 0
 100/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-html/lib/HTMLTransformer.js1763929545022558598 0
 77/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-html1763929545022558598 1
@@ -930,6 +931,10 @@
 95/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/test/fixtures/parcel/index.js1763929544942558702 0
 89/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/profiler/test/Tracer.test.js1763929544954558687 0
 74/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/profiler/test1763929544954558687 1
+79/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/utils/src/index.js1763929545030558587 0
+88/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/rust-linux-x64-musl/LICENSE1763950177317314919 0
+121/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/rust-linux-x64-musl/parcel-node-bindings.linux-x64-musl.node1763950177509314635 0
+80/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/rust-linux-x64-musl1763950177321314914 1
 96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-js/src/JSTransformer.js1763929545022558598 0
 98/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-js/src/mdx-components.jsx1763929545022558598 0
 79/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-js/src1763929545022558598 1
@@ -954,7 +959,7 @@
 82/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-image/lib1763929545022558598 1
 108/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/package-manager/src/getCurrentPackageManager.js1763929544950558692 0
 102/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/package-manager/src/NodePackageManager.js1763929544950558692 0
-76/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/response-envelopes.d.ts.map1763935362502180863 0
+76/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/response-envelopes.d.ts.map1763953889711997140 0
 78/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/classic/schemas.js1763929545302558233 0
 96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/test/fixtures/config/.parcelrc1763929544938558707 0
 107/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/package-manager/src/validateModuleSpecifier.js1763929544950558692 0
@@ -1185,7 +1190,7 @@
 98/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-css/lib/CSSTransformer.js1763929545022558598 0
 76/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-css1763929545022558598 1
 114/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-react-refresh-wrap/src/helpers/helpers.js1763929545026558593 0
-59/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/app.js.map1763935362550180789 0
+59/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/app.js.map1763953889767997062 0
 103/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-react-refresh-wrap/src/helpers1763929545026558593 1
 95/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-react-refresh-wrap/src1763929545026558593 1
 99/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-react-refresh-wrap/LICENSE1763929545026558593 0
@@ -1284,7 +1289,7 @@
 78/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/src/requests1763929544938558707 1
 78/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/optimizer-swc/lib1763929544950558692 1
 74/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/optimizer-swc1763929544950558692 1
-60/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel1763934954210831393 1
+60/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel1763953870020024881 1
 62/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/picomatch1763929545246558305 1
 73/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/escalade/index.d.mts1763929545214558347 0
 76/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/escalade/dist/index.mjs1763929545214558347 0
@@ -1340,7 +1345,7 @@
 76/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/src/v4/core/util.ts1763929545298558237 0
 82/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@lmdb/lmdb-linux-x64/index.js1763929544922558729 0
 69/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/minimist/LICENSE1763929545238558316 0
-58/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@lmdb1763929876686119404 1
+58/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@lmdb1763953870020024881 1
 72/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/fs.realpath/LICENSE1763929545214558347 0
 89/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-css/package.json1763929545022558598 0
 82/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/ordered-binary/dist/index.cjs1763929545246558305 0
@@ -1502,6 +1507,12 @@
 104/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/mdb_stat.11763929545234558321 0
 102/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/crypto.c1763929545234558321 0
 104/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/mdb_dump.c1763929545234558321 0
+90/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/workers/test/cpuCount.test.js1763929545038558577 0
+104/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/mdb_load.11763929545234558321 0
+107/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/mtest_remap.c1763929545234558321 0
+102/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/mtest4.c1763929545234558321 0
+77/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/watcher/src/wasm1763929545034558582 1
+103/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/COPYRIGHT1763929545234558321 0
 63/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/json5/dist1763929545218558342 1
 74/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/minimist/test/dash.js1763929545238558316 0
 80/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/workers/lib/threads1763929545034558582 1
@@ -1521,7 +1532,7 @@
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/SI.js1763929545206558358 0
 91/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/cjs/_array_with_holes.cjs1763929545130558457 0
 73/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/ansi-styles/index.js1763929545182558389 0
-70/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@msgpackr-extract1763929876686119404 1
+70/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@msgpackr-extract1763953870020024881 1
 75/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/ansi-styles/index.d.ts1763929545182558389 0
 73/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/minimist/test/num.js1763929545238558316 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/update-browserslist-db/utils.js1763929545290558248 0
@@ -1613,9 +1624,7 @@
 98/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/cjs/_assert_this_initialized.cjs1763929545130558457 0
 97/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/viewport-units.js1763929545198558368 0
 63/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/typescript1763929545290558248 1
-80/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-postcss1763929545022558598 1
-118/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/package-manager/test/fixtures/packages/peers-2.0/index.js1763929544950558692 0
-84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/TG.js1763929545210558352 0
+90/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/core-linux-x64-musl/package.json1763950177321314914 0
 90/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@mischnic/json-sourcemap/package.json1763929544926558723 0
 73/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/LICENSE1763929544934558713 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/IS.js1763929545206558358 0
@@ -1635,7 +1644,7 @@
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/UY.js1763929545210558352 0
 83/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/src/v3/helpers/enumUtil.ts1763929545290558248 0
 77/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/rechoir/lib/normalize.js1763929545250558301 0
-61/home/rdaniel1/assign4/assign4/prj4-sol/src/lib/library-ws.ts1763935689725684840 0
+61/home/rdaniel1/assign4/assign4/prj4-sol/src/lib/library-ws.ts1763949918053703559 0
 95/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/src/requests/ConfigRequest.js1763929544938558707 0
 97/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/watcher-linux-x64-glibc/watcher.node1763929545034558582 0
 103/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/css-media-resolution.js1763929545186558384 0
@@ -1805,8 +1814,6 @@
 73/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/ordered-binary/.idea1763929545246558305 1
 95/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/border-image.js1763929545186558384 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/TJ.js1763929545210558352 0
-102/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/source-map/parcel_sourcemap_node/build.js1763929545022558598 0
-84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/VA.js1763929545210558352 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/SR.js1763929545210558352 0
 71/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/minimist/.eslintrc1763929545238558316 0
 98/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/css-crisp-edges.js1763929545186558384 0
@@ -1815,7 +1822,7 @@
 96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/css-image-set.js1763929545186558384 0
 99/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/wasm-bulk-memory.js1763929545198558368 0
 91/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/esm/_apply_decs_2203_r.js1763929545134558452 0
-64/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/library-ws.d.ts1763935362530180820 0
+64/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/library-ws.d.ts1763953889735997107 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/PL.js1763929545206558358 0
 80/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/core/registries.d.ts1763929545302558233 0
 95/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/utils/test/input/config/empty.toml1763929545030558587 0
@@ -1925,7 +1932,7 @@
 87/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/colr.js1763929545186558384 0
 91/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/push-api.js1763929545198558368 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/NO.js1763929545206558358 0
-57/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/index.js1763935362554180783 0
+57/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/index.js1763953889771997057 0
 79/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/graph/lib/index.js1763929544946558697 0
 102/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_class_name_tdz_error/package.json1763929545122558468 0
 75/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/cs.d.ts1763929545306558227 0
@@ -1995,7 +2002,7 @@
 86/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/sni.js1763929545198558368 0
 73/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/hu.js1763929545306558227 0
 96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/vector-effect.js1763929545198558368 0
-57/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/utils.js1763935362506180857 0
+57/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/utils.js1763953889715997135 0
 90/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/cache/lib/IDBCache.browser.js1763929544930558718 0
 107/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/node_modules/node-addon-api/napi-inl.deprecated.h1763929545238558316 0
 98/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_class_private_field_loose_key1763929545122558468 1
@@ -2108,7 +2115,7 @@
 90/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/src/v4/classic/tests/lazy.test.ts1763929545294558243 0
 82/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/esm/_to_array.js1763929545134558452 0
 96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/sharedworkers.js1763929545198558368 0
-57/home/rdaniel1/assign4/assign4/prj4-sol/package-lock.json1763929876734119339 0
+57/home/rdaniel1/assign4/assign4/prj4-sol/package-lock.json1763953870060024824 0
 79/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v3/standard-schema.cjs1763929545298558237 0
 102/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/input-file-multiple.js1763929545194558373 0
 86/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/av1.js1763929545182558389 0
@@ -2132,7 +2139,7 @@
 73/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/ja.js1763929545306558227 0
 98/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/resolve/test/module_dir/xmodules/aaa/index.js1763929545250558301 0
 95/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/css-overflow.js1763929545186558384 0
-54/home/rdaniel1/assign4/assign4/prj4-sol/src/lib/app.ts1763935324558239496 0
+54/home/rdaniel1/assign4/assign4/prj4-sol/src/lib/app.ts1763950680176586372 0
 87/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_async_to_generator1763929545122558468 1
 83/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/semver/internal/identifiers.js1763929545254558295 0
 94/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/css-opacity.js1763929545186558384 0
@@ -2153,6 +2160,7 @@
 75/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/semver/functions/eq.js1763929545254558295 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/GN.js1763929545202558363 0
 105/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/link-rel-modulepreload.js1763929545194558373 0
+113/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lightningcss-linux-x64-musl/lightningcss.linux-x64-musl.node1763950176989315404 0
 102/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/msgpackr-extract/node_modules/detect-libc/LICENSE1763929545242558310 0
 96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/trusted-types.js1763929545198558368 0
 78/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lightningcss/node_modules1763929545230558326 1
@@ -2251,7 +2259,7 @@
 93/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/web-serial.js1763929545202558363 0
 92/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/packager-raw/lib/RawPackager.js1763929544954558687 0
 71/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/msgpackr/README.md1763929545242558310 0
-72/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/response-envelopes.d.ts1763935362502180863 0
+72/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/response-envelopes.d.ts1763953889711997140 0
 101/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/picture-in-picture.js1763929545194558373 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/AZ.js1763929545202558363 0
 96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/test/PublicEnvironment.test.js1763929544938558707 0
@@ -2308,6 +2316,7 @@
 90/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/imports.js1763929545194558373 0
 72/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/workers/src1763929545034558582 1
 96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/readonly-attr.js1763929545198558368 0
+87/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/core-linux-x64-musl/README.md1763950177317314919 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/FM.js1763929545202558363 0
 69/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/src/index.ts1763929545290558248 0
 103/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/prefers-color-scheme.js1763929545198558368 0
@@ -2427,6 +2436,7 @@
 73/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/v81763929545234558321 1
 93/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/decorators.js1763929545190558378 0
 96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/passwordrules.js1763929545194558373 0
+80/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lightningcss-linux-x64-musl1763950176953315457 1
 93/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/matchmedia.js1763929545194558373 0
 87/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/feature-flags/lib/types.js1763929544946558697 0
 78/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/package.json1763929544934558713 0
@@ -2544,6 +2554,8 @@
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/NA.js1763929545206558358 0
 101/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/keyboardevent-code.js1763929545194558373 0
 107/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/react-refresh/cjs/react-refresh-runtime.development.js1763929545250558301 0
+103/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/chacha8.c1763929545234558321 0
+98/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/esm/_interop_require_wildcard.js1763929545134558452 0
 76/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/commander/lib/option.js1763929545214558347 0
 70/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/commander/esm.mjs1763929545214558347 0
 93/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_await_value/package.json1763929545122558468 0
@@ -2622,7 +2634,7 @@
 77/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/mini/checks.d.cts1763929545310558222 0
 95/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/wasm-threads.js1763929545198558368 0
 67/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/typescript/bin1763929545262558285 1
-52/home/rdaniel1/assign4/assign4/prj4-sol/node_modules1763934954238831346 1
+52/home/rdaniel1/assign4/assign4/prj4-sol/node_modules1763953870020024881 1
 97/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/resolve/test/resolver/multirepo/package.json1763929545254558295 0
 92/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/objectrtc.js1763929545194558373 0
 73/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/postcss-value-parser1763929545250558301 1
@@ -2662,7 +2674,7 @@
 90/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/wasm-gc.js1763929545198558368 0
 89/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/hidden.js1763929545190558378 0
 89/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/source-map/dist/SourceMap.js1763929545014558608 0
-46/home/rdaniel1/assign4/assign4/prj4-sol/target1763935335306222861 1
+46/home/rdaniel1/assign4/assign4/prj4-sol/target1763951393347538656 1
 93/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/array-flat.js1763929545182558389 0
 97/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/variable-fonts.js1763929545198558368 0
 82/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/markdown-ansi/LICENSE1763929544946558697 0
@@ -2688,7 +2700,7 @@
 75/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/compressor-raw1763929544934558713 1
 76/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/brace-expansion/LICENSE1763929545182558389 0
 78/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/counter/package.json1763929545122558468 0
-66/home/rdaniel1/assign4/assign4/prj4-sol/target/statics.a2337e0a.js1763935335302222867 0
+66/home/rdaniel1/assign4/assign4/prj4-sol/target/statics.a2337e0a.js1763951393343538663 0
 80/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/watcher/src/Glob.hh1763929545034558582 0
 94/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/cjs/_array_like_to_array.cjs1763929545130558457 0
 77/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/src/v3/locales/en.ts1763929545290558248 0
@@ -2797,7 +2809,7 @@
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/SB.js1763929545206558358 0
 73/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/shelljs/src/mkdir.js1763929545258558290 0
 91/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/promises.js1763929545198558368 0
-70/home/rdaniel1/assign4/assign4/prj4-sol/target/statics.a2337e0a.js.map1763935335306222861 0
+70/home/rdaniel1/assign4/assign4/prj4-sol/target/statics.a2337e0a.js.map1763951393347538656 0
 91/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/packager-js/src/.eslintrc.json1763929544954558687 0
 77/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/resolver-default1763929544958558681 1
 63/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/path-parse1763929545246558305 1
@@ -2858,7 +2870,7 @@
 109/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb-data-v1/libraries/liblmdb/tooltag1763929545234558321 0
 71/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/function-bind/test1763929545218558342 1
 106/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/font-variant-alternates.js1763929545190558378 0
-74/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/response-envelopes.js.map1763935362494180875 0
+74/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/response-envelopes.js.map1763953889703997152 0
 73/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/LICENSE1763929545182558389 0
 97/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/css3-boxsizing.js1763929545190558378 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/lib/BundleGraph.js1763929544934558713 0
@@ -2874,7 +2886,7 @@
 86/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_wrap_native_super1763929545130558457 1
 79/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/function-bind/CHANGELOG.md1763929545218558342 0
 60/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/is-glob1763929545218558342 1
-61/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/utils.js.map1763935362506180857 0
+61/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/utils.js.map1763953889715997135 0
 103/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/font-variant-numeric.js1763929545190558378 0
 83/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/lib/Dependency.js1763929544934558713 0
 72/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/dotenv/package.json1763929545214558347 0
@@ -2895,6 +2907,7 @@
 83/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/cjs/_defaults.cjs1763929545130558457 0
 89/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/resolve/test/resolver/incorrect_main1763929545254558295 1
 96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/link-icon-png.js1763929545194558373 0
+77/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/core-linux-x64-musl1763950177321314914 1
 90/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/runtime-js/src/helpers/worker1763929544962558676 1
 98/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/element-closest.js1763929545190558378 0
 104/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/typescript/lib/cs/diagnosticMessages.generated.json1763929545270558274 0
@@ -2955,6 +2968,7 @@
 99/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/addeventlistener.js1763929545182558389 0
 88/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/webgl.js1763929545202558363 0
 98/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/form-validation.js1763929545190558378 0
+93/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/watcher-linux-x64-musl/README.md1763950176861315593 0
 99/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/meta-theme-color.js1763929545194558373 0
 114/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/package-manager/test/fixtures/packages/a/package.json1763929544950558692 0
 101/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/esm/_initializer_define_property.js1763929545134558452 0
@@ -3100,7 +3114,6 @@
 95/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/imagecapture.js1763929545194558373 0
 108/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/node_modules/node-addon-api/tools/eslint-format.js1763929545238558316 0
 103/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/js-regexp-lookbehind.js1763929545194558373 0
-107/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/mtest_remap.c1763929545234558321 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/GP.js1763929545202558363 0
 81/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/src/_update.mjs1763929545138558446 0
 73/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/color-name/README.md1763929545210558352 0
@@ -3125,6 +3138,7 @@
 96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/object-values.js1763929545194558373 0
 79/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/concat-map/README.markdown1763929545214558347 0
 99/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/css-not-sel-list.js1763929545186558384 0
+101/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/core-linux-x64-musl/swc.linux-x64-musl.node1763950177481314678 0
 92/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/dom-range.js1763929545190558378 0
 99/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/font-size-adjust.js1763929545190558378 0
 89/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-raw/package.json1763929545026558593 0
@@ -3285,6 +3299,7 @@
 96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/dispatchevent.js1763929545190558378 0
 92/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/wasm-simd.js1763929545198558368 0
 98/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/cjs/_tagged_template_literal.cjs1763929545130558457 0
+83/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/watcher-linux-x64-musl1763950176861315593 1
 90/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/electron-to-chromium/full-versions.js1763929545214558347 0
 104/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/getboundingclientrect.js1763929545190558378 0
 86/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/aac.js1763929545182558389 0
@@ -3341,6 +3356,15 @@
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/PK.js1763929545206558358 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/src/BundleGraph.js1763929544934558713 0
 94/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/src/_array_without_holes.mjs1763929545134558452 0
+102/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/source-map/parcel_sourcemap_node/build.js1763929545022558598 0
+84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/VA.js1763929545210558352 0
+88/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lightningcss-linux-x64-musl/LICENSE1763950176949315463 0
+91/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/cjs/_write_only_error.cjs1763929545134558452 0
+90/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lightningcss-linux-x64-musl/README.md1763950176953315457 0
+80/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-postcss1763929545022558598 1
+118/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/package-manager/test/fixtures/packages/peers-2.0/index.js1763929544950558692 0
+84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/TG.js1763929545210558352 0
+93/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lightningcss-linux-x64-musl/package.json1763950176953315457 0
 59/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/hasown1763929545218558342 1
 93/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/core/lib/public/PluginOptions.js1763929544934558713 0
 82/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/profiler/src/Trace.js1763929544954558687 0
@@ -3389,6 +3413,9 @@
 74/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/utility-types/LICENSE1763929545290558248 0
 110/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/src/_create_for_of_iterator_helper_loose.mjs1763929545138558446 0
 76/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/utility-types/README.md1763929545290558248 0
+100/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-json/src/JSONTransformer.js1763929545022558598 0
+108/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/sample-bdb.txt1763929545234558321 0
+72/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/fill-range/index.js1763929545214558347 0
 81/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v3/standard-schema.d.cts1763929545298558237 0
 69/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/hasown/README.md1763929545218558342 0
 78/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/utility-types/SECURITY.md1763929545290558248 0
@@ -3462,7 +3489,6 @@
 85/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/src/_call_super.mjs1763929545138558446 0
 90/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/typescript/lib/lib.es2019.object.d.ts1763929545274558269 0
 118/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/src/_class_check_private_static_field_descriptor.mjs1763929545138558446 0
-102/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/mtest4.c1763929545234558321 0
 74/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/resolve/lib/caller.js1763929545250558301 0
 88/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/typescript/lib/lib.es2015.core.d.ts1763929545274558269 0
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_new_arrow_check1763929545126558462 1
@@ -3772,8 +3798,6 @@
 86/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/cjs/_ts_decorate.cjs1763929545130558457 0
 85/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/workers/test/integration1763929545038558577 1
 76/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/browserslist/index.d.ts1763929545182558389 0
-77/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/watcher/src/wasm1763929545034558582 1
-103/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/COPYRIGHT1763929545234558321 0
 75/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/ja.d.ts1763929545306558227 0
 98/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-raw/src/RawTransformer.js1763929545026558593 0
 96/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/packager-wasm/lib/wasm-sourcemap.js1763929544954558687 0
@@ -3895,9 +3919,9 @@
 70/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/once/package.json1763929545246558305 0
 65/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/once/once.js1763929545246558305 0
 103/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/css-text-orientation.js1763929545190558378 0
-71/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/.package-lock.json1763934954238831346 0
+71/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/.package-lock.json1763953870080024796 0
 86/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/esm/_create_class.js1763929545134558452 0
-57/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc1763934954214831386 1
+57/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc1763953870020024881 1
 74/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/nl.cjs1763929545306558227 0
 63/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/types1763929545138558446 1
 76/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/core/index.d.cts1763929545302558233 0
@@ -3962,7 +3986,7 @@
 100/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/esm/_initializer_warning_helper.js1763929545134558452 0
 88/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/alt-eu.js1763929545210558352 0
 97/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/esm/_assert_this_initialized.js1763929545134558452 0
-70/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/response-envelopes.js1763935362498180869 0
+70/home/rdaniel1/assign4/assign4/prj4-sol/dist/lib/response-envelopes.js1763953889703997152 0
 82/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/esm/_defaults.js1763929545134558452 0
 82/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/src/_extends.mjs1763929545138558446 0
 66/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/README.md1763929545290558248 0
@@ -4072,7 +4096,6 @@
 71/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/shelljs/src/pwd.js1763929545258558290 0
 74/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/zod/v4/locales/fi.cjs1763929545306558227 0
 80/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/cjs/_using.cjs1763929545134558452 0
-91/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/cjs/_write_only_error.cjs1763929545134558452 0
 98/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/cjs/_interop_require_default.cjs1763929545130558457 0
 92/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/features/dommatrix.js1763929545190558378 0
 75/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/resolve/lib/homedir.js1763929545250558301 0
@@ -4299,6 +4322,7 @@
 88/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_array_without_holes1763929545122558468 1
 84/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/caniuse-lite/data/regions/YT.js1763929545210558352 0
 101/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_array_without_holes/package.json1763929545122558468 0
+93/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/rust-linux-x64-musl/package.json1763950177321314914 0
 76/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/resolve/test/pathfilter1763929545250558301 1
 106/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_class_private_method_get/package.json1763929545122558468 0
 99/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/src/_class_private_field_init.mjs1763929545138558446 0
@@ -4367,6 +4391,7 @@
 109/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_is_native_reflect_construct/package.json1763929545126558462 0
 92/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_assert_this_initialized1763929545122558468 1
 111/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_class_private_field_loose_key/package.json1763929545122558468 0
+91/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/watcher-linux-x64-musl/LICENSE1763950176861315593 0
 113/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_class_private_field_destructure/package.json1763929545122558468 0
 107/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/typescript/lib/zh-cn/diagnosticMessages.generated.json1763929545286558253 0
 116/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_class_apply_descriptor_destructure/package.json1763929545122558468 0
@@ -4713,10 +4738,3 @@
 112/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/_/_class_extract_field_descriptor/package.json1763929545122558468 0
 102/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/mtest2.c1763929545234558321 0
 100/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/lmdb.h1763929545234558321 0
-98/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@swc/helpers/esm/_interop_require_wildcard.js1763929545134558452 0
-103/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/chacha8.c1763929545234558321 0
-100/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/transformer-json/src/JSONTransformer.js1763929545022558598 0
-72/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/fill-range/index.js1763929545214558347 0
-108/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/sample-bdb.txt1763929545234558321 0
-90/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/@parcel/workers/test/cpuCount.test.js1763929545038558577 0
-104/home/rdaniel1/assign4/assign4/prj4-sol/node_modules/lmdb/dependencies/lmdb/libraries/liblmdb/mdb_load.11763929545234558321 0

@@ -5,23 +5,22 @@ declare class App {
     private readonly result;
     private readonly errors;
     constructor(wsUrl: string);
-    /** Auxiliary method to display search results */
+    /** Render search results */
     private displaySearchResults;
-    /** Create scroll controls (prev/next) based on available links */
+    /** prev/next pagination */
     private makeScrollControls;
-    /** Auxiliary method to display book details */
+    /** Display full book details */
     private displayBookDetails;
-    /** Add a checkout form below the book details. */
+    /** checkout form */
     private addCheckoutForm;
-    /** Update the #borrowers element by calling getLends and rendering results */
+    /** borrowers list */
     private updateBorrowers;
-    /** unwrap a result, displaying errors if !result.isOk,
-     *  returning T otherwise.   Use as if (unwrap(result)) { ... }
-     *  when T !== void.
-     */
+    /** Safe unwrap() for all Result<T> */
     private unwrap;
-    /** clear out all errors */
+    /** Clear errors UI */
     private clearErrors;
+    /** Display error list correctly typed */
+    private displayErrors;
 }
 export {};
 //# sourceMappingURL=app.d.ts.map

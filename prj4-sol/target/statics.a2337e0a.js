@@ -717,7 +717,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _appJs = require("./app.js");
 var _appJsDefault = parcelHelpers.interopDefault(_appJs);
-const DEFAULT_WS_URL = 'https://localhost:2345';
+const DEFAULT_WS_URL = "http://localhost:2345";
 window.addEventListener('DOMContentLoaded', async ()=>{
     (0, _appJsDefault.default)(getWsUrl());
 });
@@ -741,252 +741,220 @@ class App {
     result;
     errors;
     constructor(wsUrl){
-        this.wsUrl = wsUrl;
-        this.ws = (0, _libraryWsJs.makeLibraryWs)(wsUrl);
+        this.wsUrl = wsUrl.replace(/\/$/, '');
+        this.ws = (0, _libraryWsJs.makeLibraryWs)(this.wsUrl);
         this.result = document.querySelector('#result');
         this.errors = document.querySelector('#errors');
-        //TODO: add search handler
         const search = document.querySelector('#search');
         if (search) search.addEventListener('blur', (ev)=>{
-            const value = ev.target.value;
+            const value = ev.target.value.trim();
+            if (value.length < 2) {
+                this.displayErrors([
+                    {
+                        message: "Search string must be at least 2 characters.",
+                        options: {
+                            code: "badsearch"
+                        }
+                    }
+                ]);
+                return;
+            }
             const url = (0, _utilsJs.makeQueryUrl)(`${this.wsUrl}/api/books`, {
-                search: value
+                title: value
             });
-            console.log('#search blurred', value, url);
-            // Call the auxiliary method with the generated URL
             this.displaySearchResults(url);
         });
     }
-    //TODO: add private methods as needed
-    /** Auxiliary method to display search results */ async displaySearchResults(url) {
+    /** Render search results */ async displaySearchResults(url) {
         this.clearErrors();
-        // Convert URL object to string if necessary
-        const urlString = typeof url === 'string' ? url : url.toString();
-        // Call the web service
-        const result = await this.ws.findBooksByUrl(urlString);
-        // Log the result to console to verify structure
-        console.log('Search result:', result);
-        // Unwrap the result to check for errors
+        const urlStr = typeof url === "string" ? url : url.toString();
+        const result = await this.ws.findBooksByUrl(urlStr);
         const data = this.unwrap(result);
-        if (data) {
-            console.log('Unwrapped data:', data);
-            // Clear previous results
-            this.result.innerHTML = '';
-            // Add scroll controls before results
-            const scrollBefore = this.makeScrollControls(data.links);
-            if (scrollBefore) this.result.append(scrollBefore);
-            // Display the books as an unordered list
-            const books = data.result;
-            const ul = (0, _utilsJs.makeElement)('ul');
-            for (const book of books){
-                const li = (0, _utilsJs.makeElement)('li');
-                const title = (0, _utilsJs.makeElement)('span', {}, book.result.title);
-                const details = (0, _utilsJs.makeElement)('a', {
-                    href: '#'
-                }, 'details...');
-                // Add click handler for details link
-                const selfLink = book.links.self.href;
-                details.addEventListener('click', (ev)=>{
-                    ev.preventDefault();
-                    this.displayBookDetails(selfLink);
-                });
-                li.append(title, ' ', details);
-                ul.append(li);
-            }
-            this.result.append(ul);
-            // Add scroll controls after results
-            const scrollAfter = this.makeScrollControls(data.links);
-            if (scrollAfter) this.result.append(scrollAfter);
+        if (!data) return;
+        this.result.innerHTML = "";
+        const scrollTop = this.makeScrollControls(data.links);
+        if (scrollTop) this.result.append(scrollTop);
+        const ul = (0, _utilsJs.makeElement)("ul");
+        for (const book of data.result){
+            const li = (0, _utilsJs.makeElement)("li");
+            const title = (0, _utilsJs.makeElement)("span", {}, book.result.title);
+            const details = (0, _utilsJs.makeElement)('a', {
+                href: "#"
+            }, "details...");
+            details.addEventListener("click", (ev)=>{
+                ev.preventDefault();
+                this.displayBookDetails(book.links.self.href);
+            });
+            li.append(title, " ", details);
+            ul.append(li);
         }
+        this.result.append(ul);
+        const scrollBottom = this.makeScrollControls(data.links);
+        if (scrollBottom) this.result.append(scrollBottom);
     }
-    /** Create scroll controls (prev/next) based on available links */ makeScrollControls(links) {
-        const hasPrev = links.prev !== undefined;
-        const hasNext = links.next !== undefined;
+    /** prev/next pagination */ makeScrollControls(links) {
+        const hasPrev = !!links.prev;
+        const hasNext = !!links.next;
         if (!hasPrev && !hasNext) return null;
-        const scrollDiv = (0, _utilsJs.makeElement)('div', {
-            class: 'scroll'
+        const div = (0, _utilsJs.makeElement)("div", {
+            class: "scroll"
         });
         if (hasPrev) {
-            const prevLink = (0, _utilsJs.makeElement)('a', {
+            const prev = (0, _utilsJs.makeElement)("a", {
                 href: links.prev.href,
-                rel: 'prev'
-            }, '<<');
-            prevLink.addEventListener('click', (ev)=>{
+                rel: "prev"
+            }, "<<");
+            prev.addEventListener("click", (ev)=>{
                 ev.preventDefault();
                 this.displaySearchResults(this.wsUrl + links.prev.href);
             });
-            scrollDiv.append(prevLink);
+            div.append(prev);
         }
-        if (hasPrev && hasNext) scrollDiv.append(' ');
+        if (hasPrev && hasNext) div.append(" ");
         if (hasNext) {
-            const nextLink = (0, _utilsJs.makeElement)('a', {
+            const next = (0, _utilsJs.makeElement)("a", {
                 href: links.next.href,
-                rel: 'next'
-            }, '>>');
-            nextLink.addEventListener('click', (ev)=>{
+                rel: "next"
+            }, ">>");
+            next.addEventListener("click", (ev)=>{
                 ev.preventDefault();
                 this.displaySearchResults(this.wsUrl + links.next.href);
             });
-            scrollDiv.append(nextLink);
+            div.append(next);
         }
-        return scrollDiv;
+        return div;
     }
-    /** Auxiliary method to display book details */ async displayBookDetails(url) {
+    /** Display full book details */ async displayBookDetails(url) {
         this.clearErrors();
-        console.log('Details URL:', url);
-        // Call the web service
-        const result = await this.ws.getBookByUrl(this.wsUrl + url);
-        // Log the result to console
-        console.log('Book details result:', result);
-        // Unwrap the result
+        const result = await this.ws.getBookByUrl(url);
         const data = this.unwrap(result);
-        if (data) {
-            const book = data.result;
-            // Create definition list for book details
-            const dl = (0, _utilsJs.makeElement)('dl');
-            // ISBN
-            dl.append((0, _utilsJs.makeElement)('dt', {}, 'ISBN'));
-            dl.append((0, _utilsJs.makeElement)('dd', {}, book.isbn));
-            // Title
-            dl.append((0, _utilsJs.makeElement)('dt', {}, 'Title'));
-            dl.append((0, _utilsJs.makeElement)('dd', {}, book.title));
-            // Authors
-            dl.append((0, _utilsJs.makeElement)('dt', {}, 'Authors'));
-            dl.append((0, _utilsJs.makeElement)('dd', {}, book.authors.join('; ')));
-            // Number of Pages
-            dl.append((0, _utilsJs.makeElement)('dt', {}, 'Number of Pages'));
-            dl.append((0, _utilsJs.makeElement)('dd', {}, String(book.pages)));
-            // Publisher
-            dl.append((0, _utilsJs.makeElement)('dt', {}, 'Publisher'));
-            dl.append((0, _utilsJs.makeElement)('dd', {}, book.publisher));
-            // Number of Copies
-            dl.append((0, _utilsJs.makeElement)('dt', {}, 'Number of Copies'));
-            dl.append((0, _utilsJs.makeElement)('dd', {}, String(book.nCopies)));
-            // Borrowers (with id for later use)
-            dl.append((0, _utilsJs.makeElement)('dt', {}, 'Borrowers'));
-            dl.append((0, _utilsJs.makeElement)('dd', {
-                id: 'borrowers'
-            }, 'None'));
-            // Display in result area
-            this.result.innerHTML = '';
-            this.result.append(dl);
-            // Add checkout form under the details
-            this.addCheckoutForm(book.isbn);
-            // Populate borrowers list (may be None)
-            this.updateBorrowers(book.isbn);
-        }
+        if (!data) return;
+        const book = data.result;
+        const dl = (0, _utilsJs.makeElement)("dl");
+        // Add fields
+        const addItem = (label, value)=>{
+            dl.append((0, _utilsJs.makeElement)("dt", {}, label));
+            dl.append((0, _utilsJs.makeElement)("dd", {}, value));
+        };
+        addItem("ISBN", book.isbn);
+        addItem("Title", book.title);
+        addItem("Authors", book.authors.join("; "));
+        addItem("Number of Pages", String(book.pages));
+        addItem("Publisher", book.publisher);
+        addItem("Number of Copies", String(book.nCopies));
+        dl.append((0, _utilsJs.makeElement)("dt", {}, "Borrowers"));
+        dl.append((0, _utilsJs.makeElement)("dd", {
+            id: "borrowers"
+        }, "None"));
+        this.result.innerHTML = "";
+        this.result.append(dl);
+        this.addCheckoutForm(book.isbn);
+        this.updateBorrowers(book.isbn);
     }
-    /** Add a checkout form below the book details. */ addCheckoutForm(isbn) {
-        const form = (0, _utilsJs.makeElement)('form', {
-            class: 'grid-form'
+    /** checkout form */ addCheckoutForm(isbn) {
+        const form = (0, _utilsJs.makeElement)("form", {
+            class: "grid-form"
         });
-        const label = (0, _utilsJs.makeElement)('label', {
-            for: 'patronId'
-        }, 'Patron ID');
-        const input = (0, _utilsJs.makeElement)('input', {
-            id: 'patronId',
-            name: 'patronId'
+        const label = (0, _utilsJs.makeElement)("label", {
+            for: "patronId"
+        }, "Patron ID");
+        const input = (0, _utilsJs.makeElement)("input", {
+            id: "patronId",
+            name: "patronId"
         });
-        const br = (0, _utilsJs.makeElement)('br');
-        const errSpan = (0, _utilsJs.makeElement)('span', {
-            class: 'error',
-            id: 'patronId-error'
+        const errorSpan = (0, _utilsJs.makeElement)("span", {
+            class: "error",
+            id: "patronId-error"
         });
-        const inputWrap = (0, _utilsJs.makeElement)('span');
-        inputWrap.append(input, br, errSpan);
-        const submit = (0, _utilsJs.makeElement)('button', {
-            type: 'submit'
-        }, 'Checkout Book');
-        form.append(label, inputWrap, submit);
-        form.addEventListener('submit', async (ev)=>{
+        const wrap = (0, _utilsJs.makeElement)("span");
+        wrap.append(input, (0, _utilsJs.makeElement)("br"), errorSpan);
+        const button = (0, _utilsJs.makeElement)("button", {
+            type: "submit"
+        }, "Checkout Book");
+        form.append(label, wrap, button);
+        form.addEventListener("submit", async (ev)=>{
             ev.preventDefault();
             this.clearErrors();
             const data = (0, _utilsJs.getFormData)(form);
             const patronId = data.patronId;
             if (!patronId) {
-                const w = document.querySelector(`#patronId-error`);
-                if (w) w.append('Patron ID required');
+                const w = document.querySelector("#patronId-error");
+                w.append("Patron ID required");
                 return;
             }
-            // call checkout web service
-            const res = await this.ws.checkoutBook({
+            const r = await this.ws.checkoutBook({
                 isbn,
                 patronId
             });
-            if (res.isOk === false) displayErrors(res.errors);
-            else // refresh borrowers list
+            if (!r.isOk) {
+                this.displayErrors(r.errors);
+                return;
+            }
             await this.updateBorrowers(isbn);
         });
         this.result.append(form);
     }
-    /** Update the #borrowers element by calling getLends and rendering results */ async updateBorrowers(isbn) {
-        this.clearErrors();
-        const res = await this.ws.getLends(isbn);
-        if (res.isOk === false) {
-            displayErrors(res.errors);
+    /** borrowers list */ async updateBorrowers(isbn) {
+        const r = await this.ws.getLends(isbn);
+        if (!r.isOk) {
+            this.displayErrors(r.errors);
             return;
         }
-        const lends = res.val;
-        const dd = this.result.querySelector('#borrowers');
-        if (!dd) return;
+        const lends = r.val;
+        const dd = this.result.querySelector("#borrowers");
         if (!lends || lends.length === 0) {
-            dd.innerHTML = 'None';
+            dd.innerHTML = "None";
             return;
         }
-        const ul = (0, _utilsJs.makeElement)('ul');
+        const ul = (0, _utilsJs.makeElement)("ul");
         for (const lend of lends){
-            const li = (0, _utilsJs.makeElement)('li');
-            const span = (0, _utilsJs.makeElement)('span', {
-                class: 'content'
+            const li = (0, _utilsJs.makeElement)("li");
+            const span = (0, _utilsJs.makeElement)("span", {
+                class: "content"
             }, lend.patronId);
-            const btn = (0, _utilsJs.makeElement)('button', {
-                class: 'return-book'
-            }, 'Return Book');
-            btn.addEventListener('click', async (ev)=>{
+            const btn = (0, _utilsJs.makeElement)("button", {
+                class: "return-book"
+            }, "Return Book");
+            btn.addEventListener("click", async (ev)=>{
                 ev.preventDefault();
-                this.clearErrors();
-                const r = await this.ws.returnBook(lend);
-                if (r.isOk === false) displayErrors(r.errors);
-                else await this.updateBorrowers(isbn);
+                const r2 = await this.ws.returnBook(lend);
+                if (!r2.isOk) {
+                    this.displayErrors(r2.errors);
+                    return;
+                }
+                await this.updateBorrowers(isbn);
             });
             li.append(span, btn);
             ul.append(li);
         }
-        dd.innerHTML = '';
+        dd.innerHTML = "";
         dd.append(ul);
     }
-    /** unwrap a result, displaying errors if !result.isOk,
-     *  returning T otherwise.   Use as if (unwrap(result)) { ... }
-     *  when T !== void.
-     */ unwrap(result) {
-        if (result.isOk === false) displayErrors(result.errors);
-        else return result.val;
+    /** Safe unwrap() for all Result<T> */ unwrap(result) {
+        if (!result.isOk) {
+            this.displayErrors(result.errors);
+            return null;
+        }
+        return result.val;
     }
-    /** clear out all errors */ clearErrors() {
-        this.errors.innerHTML = '';
-        document.querySelectorAll(`.error`).forEach((el)=>{
-            el.innerHTML = '';
-        });
+    /** Clear errors UI */ clearErrors() {
+        this.errors.innerHTML = "";
+        document.querySelectorAll(".error").forEach((el)=>el.innerHTML = "");
     }
-} //class App
-/** Display errors. If an error has a widget or path widgetId such
- *  that an element having ID `${widgetId}-error` exists,
- *  then the error message is added to that element; otherwise the
- *  error message is added to the element having to the element having
- *  ID `errors` wrapped within an `<li>`.
- */ function displayErrors(errors) {
-    for (const err of errors){
-        const id = err.options.widget ?? err.options.path;
-        const widget = id && document.querySelector(`#${id}-error`);
-        if (widget) widget.append(err.message);
-        else {
-            const li = (0, _utilsJs.makeElement)('li', {
-                class: 'error'
-            }, err.message);
-            document.querySelector(`#errors`).append(li);
+    /** Display error list correctly typed */ displayErrors(errors) {
+        for (const err of errors){
+            const id = err.options.widget ?? err.options.path;
+            const widget = id && document.querySelector(`#${id}-error`);
+            if (widget) widget.append(err.message);
+            else {
+                const li = (0, _utilsJs.makeElement)("li", {
+                    class: "error"
+                }, err.message);
+                this.errors.append(li);
+            }
         }
     }
-} //TODO: add functions as needed
+}
 
 },{"./library-ws.js":"TN2hU","./utils.js":"Giq4f","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"TN2hU":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -998,24 +966,39 @@ function makeLibraryWs(url) {
     return new LibraryWs(url);
 }
 class LibraryWs {
-    //base url for these web services
+    // base url for these web services (no trailing slash)
     url;
     constructor(url){
-        this.url = url;
+        // normalize base url (remove trailing slash if present)
+        this.url = url.replace(/\/$/, '');
+    }
+    /** Normalize a possibly-relative link to an absolute URL string.
+     *  If the provided link is already absolute (starts with http(s):),
+     *  return as-is. If it starts with '/', prefix with this.url.
+     *  Accepts either string or URL.
+     */ normalizeLink(link) {
+        const s = typeof link === 'string' ? link : link.toString();
+        // absolute?
+        if (/^https?:\/\//i.test(s)) return s;
+        // relative starting with '/'
+        if (s.startsWith('/')) return `${this.url}${s}`;
+        // relative without slash — treat as relative to base path
+        return `${this.url}/${s}`;
     }
     /** given an absolute books url bookUrl ending with /books/api,
      *  return a SuccessEnvelope for the book identified by bookUrl.
      */ async getBookByUrl(bookUrl) {
-        return getEnvelope(bookUrl);
+        const u = this.normalizeLink(bookUrl);
+        return getEnvelope(u);
     }
     /** given an absolute url findUrl ending with /books with query
      *  parameters search and optional query parameters count and index,
      *  return a PagedEnvelope containing a list of matching books.
      */ async findBooksByUrl(findUrl) {
-        return getEnvelope(findUrl);
+        const u = this.normalizeLink(findUrl);
+        return getEnvelope(u);
     }
-    /** check out book specified by lend */ //make a PUT request to /lendings
-    async checkoutBook(lend) {
+    /** check out book specified by lend (PUT /api/lendings) */ async checkoutBook(lend) {
         const url = `${this.url}/api/lendings`;
         try {
             const response = await fetch(url, {
@@ -1025,16 +1008,17 @@ class LibraryWs {
                 },
                 body: JSON.stringify(lend)
             });
+            // try to parse JSON; if parse fails we'll catch below
             const envelope = await response.json();
-            if (envelope.isOk === true) return (0, _cs544JsUtils.Errors).VOID_RESULT;
-            else return new (0, _cs544JsUtils.Errors).ErrResult(envelope.errors);
+            if (envelope && envelope.isOk === true) return (0, _cs544JsUtils.Errors).VOID_RESULT;
+            else // envelope is ErrorEnvelope
+            return new (0, _cs544JsUtils.Errors).ErrResult(envelope.errors);
         } catch (err) {
             console.error(err);
             return (0, _cs544JsUtils.Errors).errResult(`PUT ${url}: error ${err}`);
         }
     }
-    /** return book specified by lend */ //make a DELETE request to /lendings
-    async returnBook(lend) {
+    /** return book specified by lend (DELETE /api/lendings) */ async returnBook(lend) {
         const url = `${this.url}/api/lendings`;
         try {
             const response = await fetch(url, {
@@ -1045,25 +1029,30 @@ class LibraryWs {
                 body: JSON.stringify(lend)
             });
             const envelope = await response.json();
-            if (envelope.isOk === true) return (0, _cs544JsUtils.Errors).VOID_RESULT;
+            if (envelope && envelope.isOk === true) return (0, _cs544JsUtils.Errors).VOID_RESULT;
             else return new (0, _cs544JsUtils.Errors).ErrResult(envelope.errors);
         } catch (err) {
             console.error(err);
             return (0, _cs544JsUtils.Errors).errResult(`DELETE ${url}: error ${err}`);
         }
     }
-    /** return Lend[] of all lendings for isbn. */ //make a GET request to /lendings with query-params set
-    //to { findBy: 'isbn', isbn }.
-    async getLends(isbn) {
+    /** return Lend[] of all lendings for isbn.
+     *  GET /api/lendings?findBy=isbn&isbn=...
+     */ async getLends(isbn) {
         const url = new URL(`${this.url}/api/lendings`);
         url.searchParams.set('findBy', 'isbn');
         url.searchParams.set('isbn', isbn);
         try {
-            const result = await fetchJson(url.toString());
-            if (result.isOk === false) return result;
-            const envelope = result.val;
-            if (envelope.isOk === true) return (0, _cs544JsUtils.Errors).okResult(envelope.result);
-            else return new (0, _cs544JsUtils.Errors).ErrResult(envelope.errors);
+            const res = await fetchJson(url.toString());
+            if (res.isOk === false) // network/fetch/json error converted to ErrResult already
+            return res;
+            const envelope = res.val;
+            if (envelope && envelope.isOk === true) {
+                // SuccessEnvelope.result is the value
+                const success = envelope;
+                return (0, _cs544JsUtils.Errors).okResult(success.result);
+            } else // ErrorEnvelope
+            return new (0, _cs544JsUtils.Errors).ErrResult(envelope.errors);
         } catch (err) {
             console.error(err);
             return (0, _cs544JsUtils.Errors).errResult(`GET ${url.toString()}: error ${err}`);
@@ -1071,13 +1060,14 @@ class LibraryWs {
     }
 }
 /** Return either a SuccessEnvelope<T> or PagedEnvelope<T> wrapped
- *  within a Errors.Result.  Note that the caller needs to instantiate
- *  both type parameters appropriately.
+ *  within an Errors.Result.  Note that the caller needs to instantiate
+ *  the type parameters appropriately.
  */ async function getEnvelope(url) {
-    const result = await fetchJson(url);
+    const u = typeof url === 'string' ? url : url.toString();
+    const result = await fetchJson(u);
     if (result.isOk === true) {
         const response = result.val;
-        if (response.isOk === true) return (0, _cs544JsUtils.Errors).okResult(response);
+        if (response && response.isOk === true) return (0, _cs544JsUtils.Errors).okResult(response);
         else return new (0, _cs544JsUtils.Errors).ErrResult(response.errors);
     } else return result;
 }
@@ -1085,17 +1075,20 @@ const DEFAULT_FETCH = {
     method: 'GET'
 };
 /** send a request to url, converting any exceptions to an
- *  error result.
+ *  Errors.Result. If fetch succeeds but response.json() fails,
+ *  this is converted to an errResult as well.
  */ async function fetchJson(url, options = DEFAULT_FETCH) {
-    //<https://github.com/microsoft/TypeScript/blob/main/src/lib/dom.generated.d.ts#L26104>
+    const u = typeof url === 'string' ? url : url.toString();
     try {
-        const response = await fetch(url, options);
-        return (0, _cs544JsUtils.Errors).okResult(await response.json());
+        const response = await fetch(u, options);
+        // Attempt to parse JSON body. If response has no JSON body this may throw.
+        const body = await response.json();
+        return (0, _cs544JsUtils.Errors).okResult(body);
     } catch (err) {
         console.error(err);
-        return (0, _cs544JsUtils.Errors).errResult(`${options.method} ${url}: error ${err}`);
+        return (0, _cs544JsUtils.Errors).errResult(`${options.method ?? 'GET'} ${u}: error ${err}`);
     }
-} //TODO: add other functions as needed
+}
 
 },{"cs544-js-utils":"fbWgX","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"fbWgX":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
